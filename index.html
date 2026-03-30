@@ -1,0 +1,987 @@
+﻿<!DOCTYPE html>
+<html
+    lang="pt-BR"
+    dir="ltr"
+>
+<head>
+    <meta
+        charset="UTF-8"
+    >
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    >
+    <meta
+        name="description"
+        content="Treinamento gamificado sobre Proteção de Dados e Sigilo na Área da Saúde (LGPD) da Policlínica."
+    >
+    <meta
+        name="theme-color"
+        content="#09090b"
+    >
+    <meta
+        name="apple-mobile-web-app-capable"
+        content="yes"
+    >
+    <meta
+        name="apple-mobile-web-app-status-bar-style"
+        content="black-translucent"
+    >
+    <title>
+        LGPD Arena - Policlínica
+    </title>
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+    <link
+        rel="preload"
+        href="css/style.css"
+        as="style"
+    >
+</head>
+<body
+    class="theme-dark user-select-none bg-zinc-950 text-zinc-50 overflow-hidden w-screen h-screen flex justify-center items-center"
+>
+    <svg
+        aria-hidden="true"
+        class="hidden w-0 h-0 absolute"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <defs>
+            <symbol
+                id="icon-shield"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <path
+                    d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                ></path>
+            </symbol>
+            <symbol
+                id="icon-user"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <path
+                    d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
+                ></path>
+                <circle
+                    cx="12"
+                    cy="7"
+                    r="4"
+                ></circle>
+            </symbol>
+            <symbol
+                id="icon-lock"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <rect
+                    x="3"
+                    y="11"
+                    width="18"
+                    height="11"
+                    rx="2"
+                    ry="2"
+                ></rect>
+                <path
+                    d="M7 11V7a5 5 0 0 1 10 0v4"
+                ></path>
+            </symbol>
+            <symbol
+                id="icon-check"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <polyline
+                    points="20 6 9 17 4 12"
+                ></polyline>
+            </symbol>
+            <symbol
+                id="icon-x"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <line
+                    x1="18"
+                    y1="6"
+                    x2="6"
+                    y2="18"
+                ></line>
+                <line
+                    x1="6"
+                    y1="6"
+                    x2="18"
+                    y2="18"
+                ></line>
+            </symbol>
+            <symbol
+                id="icon-log-in"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <path
+                    d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"
+                ></path>
+                <polyline
+                    points="10 17 15 12 10 7"
+                ></polyline>
+                <line
+                    x1="15"
+                    y1="12"
+                    x2="3"
+                    y2="12"
+                ></line>
+            </symbol>
+            <symbol
+                id="icon-activity"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <polyline
+                    points="22 12 18 12 15 21 9 3 6 12 2 12"
+                ></polyline>
+            </symbol>
+            <symbol
+                id="icon-alert-triangle"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <path
+                    d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+                ></path>
+                <line
+                    x1="12"
+                    y1="9"
+                    x2="12"
+                    y2="13"
+                ></line>
+                <line
+                    x1="12"
+                    y1="17"
+                    x2="12.01"
+                    y2="17"
+                ></line>
+            </symbol>
+            <symbol
+                id="icon-award"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <circle
+                    cx="12"
+                    cy="8"
+                    r="7"
+                ></circle>
+                <polyline
+                    points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"
+                ></polyline>
+            </symbol>
+            <symbol
+                id="icon-database"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <ellipse
+                    cx="12"
+                    cy="5"
+                    rx="9"
+                    ry="3"
+                ></ellipse>
+                <path
+                    d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"
+                ></path>
+                <path
+                    d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"
+                ></path>
+            </symbol>
+            <symbol
+                id="icon-file-text"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <path
+                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                ></path>
+                <polyline
+                    points="14 2 14 8 20 8"
+                ></polyline>
+                <line
+                    x1="16"
+                    y1="13"
+                    x2="8"
+                    y2="13"
+                ></line>
+                <line
+                    x1="16"
+                    y1="17"
+                    x2="8"
+                    y2="17"
+                ></line>
+                <polyline
+                    points="10 9 9 9 8 9"
+                ></polyline>
+            </symbol>
+            <symbol
+                id="icon-folder"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <path
+                    d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"
+                ></path>
+            </symbol>
+            <symbol
+                id="icon-hard-drive"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <line
+                    x1="22"
+                    y1="12"
+                    x2="2"
+                    y2="12"
+                ></line>
+                <path
+                    d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"
+                ></path>
+                <line
+                    x1="6"
+                    y1="16"
+                    x2="6.01"
+                    y2="16"
+                ></line>
+                <line
+                    x1="10"
+                    y1="16"
+                    x2="10.01"
+                    y2="16"
+                ></line>
+            </symbol>
+            <symbol
+                id="icon-key"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <path
+                    d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"
+                ></path>
+            </symbol>
+            <symbol
+                id="icon-server"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <rect
+                    x="2"
+                    y="2"
+                    width="20"
+                    height="8"
+                    rx="2"
+                    ry="2"
+                ></rect>
+                <rect
+                    x="2"
+                    y="14"
+                    width="20"
+                    height="8"
+                    rx="2"
+                    ry="2"
+                ></rect>
+                <line
+                    x1="6"
+                    y1="6"
+                    x2="6.01"
+                    y2="6"
+                ></line>
+                <line
+                    x1="6"
+                    y1="18"
+                    x2="6.01"
+                    y2="18"
+                ></line>
+            </symbol>
+            <symbol
+                id="icon-target"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                ></circle>
+                <circle
+                    cx="12"
+                    cy="12"
+                    r="6"
+                ></circle>
+                <circle
+                    cx="12"
+                    cy="12"
+                    r="2"
+                ></circle>
+            </symbol>
+            <symbol
+                id="icon-trash"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <polyline
+                    points="3 6 5 6 21 6"
+                ></polyline>
+                <path
+                    d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+                ></path>
+            </symbol>
+            <symbol
+                id="icon-chevron-right"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <polyline
+                    points="9 18 15 12 9 6"
+                ></polyline>
+            </symbol>
+            <symbol
+                id="icon-cpu"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <rect
+                    x="4"
+                    y="4"
+                    width="16"
+                    height="16"
+                    rx="2"
+                    ry="2"
+                ></rect>
+                <rect
+                    x="9"
+                    y="9"
+                    width="6"
+                    height="6"
+                ></rect>
+                <line
+                    x1="9"
+                    y1="1"
+                    x2="9"
+                    y2="4"
+                ></line>
+                <line
+                    x1="15"
+                    y1="1"
+                    x2="15"
+                    y2="4"
+                ></line>
+                <line
+                    x1="9"
+                    y1="20"
+                    x2="9"
+                    y2="23"
+                ></line>
+                <line
+                    x1="15"
+                    y1="20"
+                    x2="15"
+                    y2="23"
+                ></line>
+                <line
+                    x1="20"
+                    y1="9"
+                    x2="23"
+                    y2="9"
+                ></line>
+                <line
+                    x1="20"
+                    y1="14"
+                    x2="23"
+                    y2="14"
+                ></line>
+                <line
+                    x1="1"
+                    y1="9"
+                    x2="4"
+                    y2="9"
+                ></line>
+                <line
+                    x1="1"
+                    y1="14"
+                    x2="4"
+                    y2="14"
+                ></line>
+            </symbol>
+            <symbol
+                id="icon-refresh"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <polyline
+                    points="23 4 23 10 17 10"
+                ></polyline>
+                <polyline
+                    points="1 20 1 14 7 14"
+                ></polyline>
+                <path
+                    d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"
+                ></path>
+            </symbol>
+            <symbol
+                id="icon-play"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <polygon
+                    points="5 3 19 12 5 21 5 3"
+                ></polygon>
+            </symbol>
+        </defs>
+    </svg>
+
+    <div
+        id="application-wrapper"
+        class="pos-relative w-full max-w-md h-full max-h-full bg-zinc-900 shadow-2xl overflow-hidden flex flex-col items-center justify-center transform-none border border-zinc-800 rounded-none sm:rounded-3xl sm:max-h-[90vh] sm:my-8"
+        role="main"
+        aria-label="Contêiner principal do aplicativo LGPD Arena"
+    >
+        
+        <div
+            id="canvas-container"
+            class="pos-absolute inset-0 w-full h-full z-10 pointer-events-none"
+        >
+            <canvas
+                id="render-canvas"
+                class="block w-full h-full pointer-events-auto"
+                aria-label="Área de renderização visual interativa do treinamento"
+                tabindex="-1"
+            ></canvas>
+        </div>
+
+        <div
+            id="layer-login"
+            class="interface-layer active z-20 flex flex-col justify-center items-center w-full h-full p-4 md:p-6 bg-zinc-950/80 backdrop-blur-xl transition-all duration-500 animate-fade-in"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="login-title"
+        >
+            <div
+                class="dialog-box w-full max-w-sm bg-zinc-900/60 backdrop-blur-2xl border border-blue-500/20 rounded-3xl p-6 shadow-[0_0_40px_rgba(59,130,246,0.1)] flex flex-col gap-4 transform transition-transform animate-slide-up overflow-y-auto max-h-full"
+            >
+                
+                <div
+                    class="header-section text-center flex flex-col items-center gap-2"
+                >
+                    <div
+                        class="tag-indicator inline-flex items-center gap-2 bg-blue-900/30 text-blue-400 border border-blue-500/30 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-1 animate-pulse"
+                        role="status"
+                    >
+                        <svg
+                            class="w-4 h-4"
+                            aria-hidden="true"
+                        >
+                            <use
+                                href="#icon-shield"
+                            ></use>
+                        </svg>
+                        <span>Treinamento Técnico</span>
+                    </div>
+                    
+                    <h1
+                        id="login-title"
+                        class="text-4xl font-black text-zinc-50 tracking-tighter leading-tight drop-shadow-lg"
+                    >
+                        LGPD ARENA
+                    </h1>
+                    
+                    <p
+                        class="text-zinc-400 text-sm font-medium leading-relaxed max-w-xs"
+                    >
+                        Proteção de Dados e Sigilo. Identifique-se como Operador para iniciar.
+                    </p>
+                </div>
+                
+                <form
+                    id="login-form"
+                    class="flex flex-col gap-4 w-full mt-1"
+                    autocomplete="off"
+                    onsubmit="event.preventDefault();"
+                    aria-label="Formulário de identificação do operador"
+                >
+                    <div
+                        class="field-container flex flex-col gap-2 relative group"
+                    >
+                        <label
+                            for="input-name"
+                            class="text-xs font-bold text-blue-300 uppercase tracking-widest flex items-center justify-between"
+                        >
+                            <span>Identificação</span>
+                            <svg
+                                class="w-4 h-4 text-blue-400 group-focus-within:text-blue-200 transition-colors"
+                                aria-hidden="true"
+                            >
+                                <use
+                                    href="#icon-user"
+                                ></use>
+                            </svg>
+                        </label>
+                        <input
+                            type="text"
+                            id="input-name"
+                            class="input-element w-full bg-zinc-950/80 border border-zinc-700 text-zinc-50 p-4 rounded-xl text-base font-medium outline-none transition-all hover:border-blue-500/50 focus:border-blue-400 focus:ring-2 focus:ring-blue-500/30 shadow-inner"
+                            placeholder="Nome completo do Operador"
+                            required
+                            aria-required="true"
+                            minlength="3"
+                        >
+                    </div>
+                    
+                    <div
+                        class="field-container flex flex-col gap-2 relative group"
+                    >
+                        <label
+                            for="input-sector"
+                            class="text-xs font-bold text-blue-300 uppercase tracking-widest flex items-center justify-between"
+                        >
+                            <span>Setor de Atuação</span>
+                            <svg
+                                class="w-4 h-4 text-blue-400 group-focus-within:text-blue-200 transition-colors"
+                                aria-hidden="true"
+                            >
+                                <use
+                                    href="#icon-database"
+                                ></use>
+                            </svg>
+                        </label>
+                        <div
+                            class="relative"
+                        >
+                            <select
+                                id="input-sector"
+                                class="input-element w-full bg-zinc-950/80 border border-zinc-700 text-zinc-50 p-4 rounded-xl text-base font-medium outline-none transition-all hover:border-blue-500/50 focus:border-blue-400 focus:ring-2 focus:ring-blue-500/30 appearance-none cursor-pointer pr-12 shadow-inner"
+                                required
+                                aria-required="true"
+                            >
+                                <option
+                                    value=""
+                                    disabled
+                                    selected
+                                    class="text-zinc-600"
+                                >
+                                    Defina o setor
+                                </option>
+                                <option
+                                    value="Atendimento e Recepção"
+                                    class="bg-zinc-900 text-zinc-50 py-2"
+                                >
+                                    Atendimento e Recepção
+                                </option>
+                                <option
+                                    value="Corpo Clínico"
+                                    class="bg-zinc-900 text-zinc-50 py-2"
+                                >
+                                    Corpo Clínico
+                                </option>
+                                <option
+                                    value="Suporte e TI"
+                                    class="bg-zinc-900 text-zinc-50 py-2"
+                                >
+                                    Suporte e TI
+                                </option>
+                                <option
+                                    value="Financeiro e ADM"
+                                    class="bg-zinc-900 text-zinc-50 py-2"
+                                >
+                                    Financeiro e ADM
+                                </option>
+                            </select>
+                            <div
+                                class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-blue-400"
+                            >
+                                <svg
+                                    class="w-5 h-5"
+                                    aria-hidden="true"
+                                >
+                                    <use
+                                        href="#icon-chevron-right"
+                                        class="transform rotate-90"
+                                    ></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button
+                        type="button"
+                        id="trigger-start"
+                        class="action-button w-full bg-blue-600/90 hover:bg-blue-500 text-white border border-blue-400/50 py-4 px-6 rounded-xl font-bold text-lg transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 flex items-center justify-center gap-3 mt-2 group shadow-[0_0_20px_rgba(59,130,246,0.4)] hover:shadow-[0_0_30px_rgba(59,130,246,0.6)] backdrop-blur-md"
+                        aria-label="Confirmar dados e ingressar na Arena de Treinamento"
+                    >
+                        <span class="tracking-wide">Ingressar na Arena</span>
+                        <svg
+                            class="w-5 h-5 transform transition-transform group-hover:translate-x-1 drop-shadow-md"
+                            aria-hidden="true"
+                        >
+                            <use
+                                href="#icon-log-in"
+                            ></use>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div
+            id="layer-results"
+            class="interface-layer hidden z-30 flex flex-col justify-center items-center w-full h-full p-4 md:p-6 bg-zinc-950/90 backdrop-blur-2xl transition-all duration-500"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="results-title"
+        >
+            <div
+                class="dialog-box w-full max-w-sm bg-zinc-900/70 backdrop-blur-3xl border border-emerald-500/30 rounded-3xl p-6 shadow-[0_0_50px_rgba(16,185,129,0.15)] flex flex-col gap-5 transform transition-transform overflow-y-auto max-h-full"
+            >
+                
+                <div
+                    class="tag-indicator inline-flex items-center gap-2 bg-emerald-900/30 text-emerald-400 border border-emerald-500/40 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider self-center mb-1 animate-pulse"
+                    role="status"
+                >
+                    <svg
+                        class="w-4 h-4"
+                        aria-hidden="true"
+                    >
+                        <use
+                            href="#icon-award"
+                        ></use>
+                    </svg>
+                    <span>Certificação Concluída</span>
+                </div>
+                
+                <div
+                    class="header-section text-center flex flex-col items-center gap-2"
+                >
+                    <h1
+                        id="results-title"
+                        class="text-4xl font-black text-zinc-50 tracking-tighter leading-tight drop-shadow-lg"
+                    >
+                        Relatório Final
+                    </h1>
+                    <p
+                        class="text-zinc-400 text-sm font-medium leading-relaxed max-w-xs"
+                    >
+                        Análise de competência finalizada. Abaixo o registro do seu desempenho como Operador de Dados.
+                    </p>
+                    
+                    <div
+                        id="display-identity"
+                        class="mt-2 text-sm font-bold text-emerald-100 bg-zinc-950/80 border border-emerald-800/50 px-4 py-2 rounded-lg flex items-center gap-2 shadow-inner"
+                        aria-live="polite"
+                    >
+                        <svg
+                            class="w-4 h-4 text-emerald-500"
+                            aria-hidden="true"
+                        >
+                            <use
+                                href="#icon-user"
+                            ></use>
+                        </svg>
+                        <span
+                            id="identity-text"
+                        >
+                            Carregando...
+                        </span>
+                    </div>
+                </div>
+                
+                <div
+                    class="result-display flex flex-col items-center justify-center bg-zinc-950/80 border border-emerald-900/50 rounded-2xl py-6 px-4 mt-2 mb-2 relative overflow-hidden group shadow-inner"
+                >
+                    <div
+                        class="absolute inset-0 bg-gradient-to-b from-emerald-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                    ></div>
+                    <div
+                        class="result-score text-6xl font-black text-emerald-400 tracking-tighter leading-none mb-2 drop-shadow-[0_0_15px_rgba(16,185,129,0.5)] z-10 font-mono"
+                        id="display-points"
+                        aria-live="polite"
+                    >
+                        0
+                    </div>
+                    <div
+                        class="result-tag text-xs font-bold text-emerald-600 uppercase tracking-widest z-10 flex items-center gap-2"
+                    >
+                        <svg
+                            class="w-4 h-4 text-emerald-500"
+                            aria-hidden="true"
+                        >
+                            <use
+                                href="#icon-activity"
+                            ></use>
+                        </svg>
+                        Métricas de Segurança
+                    </div>
+                </div>
+                
+                <div
+                    class="warning-box flex items-start gap-3 p-3 bg-zinc-950/60 border border-amber-900/30 rounded-xl shadow-inner"
+                >
+                    <svg
+                        class="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5"
+                        aria-hidden="true"
+                    >
+                        <use
+                            href="#icon-alert-triangle"
+                        ></use>
+                    </svg>
+                    <p
+                        class="text-xs text-zinc-300 leading-relaxed font-medium"
+                    >
+                        Lembre-se: em caso de incidente ou dúvidas, abra um chamado no HelpDesk (GLPI) para a equipe de T.I.
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    id="trigger-reset"
+                    class="action-button finish w-full bg-emerald-600/90 hover:bg-emerald-500 text-white border border-emerald-400/50 py-4 px-6 rounded-xl font-bold text-lg transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 flex items-center justify-center gap-3 mt-1 shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] backdrop-blur-md"
+                    aria-label="Registrar pontuação no banco de dados e retornar à tela inicial"
+                >
+                    <svg
+                        class="w-5 h-5 animate-spin-slow drop-shadow-md"
+                        aria-hidden="true"
+                        id="icon-sync"
+                    >
+                        <use
+                            href="#icon-refresh"
+                        ></use>
+                    </svg>
+                    <span class="tracking-wide">Registrar e Finalizar</span>
+                </button>
+            </div>
+        </div>
+
+        <template
+            id="template-toast-success"
+        >
+            <div
+                class="toast-notification success fixed bottom-6 right-6 flex items-center gap-4 bg-zinc-900/90 backdrop-blur-md border border-emerald-500/30 border-l-4 border-l-emerald-500 text-zinc-50 py-3 px-5 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.5)] z-50 transform translate-x-[120%] transition-transform duration-500 ease-elastic"
+                role="alert"
+                aria-live="assertive"
+            >
+                <div
+                    class="icon-container flex-shrink-0 bg-emerald-950/80 p-2 rounded-full text-emerald-400 shadow-[0_0_10px_rgba(16,185,129,0.2)]"
+                >
+                    <svg
+                        class="w-5 h-5"
+                        aria-hidden="true"
+                    >
+                        <use
+                            href="#icon-check"
+                        ></use>
+                    </svg>
+                </div>
+                <div
+                    class="message-container flex flex-col"
+                >
+                    <span
+                        class="title text-sm font-bold text-emerald-400"
+                    >
+                        Ação Segura
+                    </span>
+                    <span
+                        class="description text-xs font-medium text-zinc-300"
+                    >
+                        Protocolo seguido corretamente.
+                    </span>
+                </div>
+            </div>
+        </template>
+
+        <template
+            id="template-toast-danger"
+        >
+            <div
+                class="toast-notification danger fixed bottom-6 right-6 flex items-center gap-4 bg-zinc-900/90 backdrop-blur-md border border-red-500/30 border-l-4 border-l-red-500 text-zinc-50 py-3 px-5 rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.5)] z-50 transform translate-x-[120%] transition-transform duration-500 ease-elastic"
+                role="alert"
+                aria-live="assertive"
+            >
+                <div
+                    class="icon-container flex-shrink-0 bg-red-950/80 p-2 rounded-full text-red-400 shadow-[0_0_10px_rgba(239,68,68,0.2)]"
+                >
+                    <svg
+                        class="w-5 h-5"
+                        aria-hidden="true"
+                    >
+                        <use
+                            href="#icon-x"
+                        ></use>
+                    </svg>
+                </div>
+                <div
+                    class="message-container flex flex-col"
+                >
+                    <span
+                        class="title text-sm font-bold text-red-400"
+                    >
+                        Violação Detectada
+                    </span>
+                    <span
+                        class="description text-xs font-medium text-zinc-300"
+                    >
+                        Procedimento fere as diretrizes da LGPD.
+                    </span>
+                </div>
+            </div>
+        </template>
+
+        <template
+            id="template-hud-overlay"
+        >
+            <div
+                class="hud-container absolute top-0 left-0 w-full p-4 flex justify-between items-start pointer-events-none z-10"
+                aria-hidden="true"
+            >
+                <div
+                    class="stage-indicator flex flex-col gap-1 bg-zinc-900/60 backdrop-blur-md border border-blue-500/20 p-3 rounded-xl shadow-lg"
+                >
+                    <span
+                        class="text-[10px] font-black uppercase tracking-widest text-zinc-400"
+                    >
+                        Progresso
+                    </span>
+                    <div
+                        class="flex items-center gap-2"
+                    >
+                        <svg
+                            class="w-4 h-4 text-blue-400"
+                        >
+                            <use
+                                href="#icon-cpu"
+                            ></use>
+                        </svg>
+                        <span
+                            class="text-sm font-bold text-zinc-50 phase-text"
+                        >
+                            Fase 1/4
+                        </span>
+                    </div>
+                </div>
+                <div
+                    class="score-indicator flex flex-col gap-1 items-end bg-zinc-900/60 backdrop-blur-md border border-emerald-500/20 p-3 rounded-xl shadow-lg"
+                >
+                    <span
+                        class="text-[10px] font-black uppercase tracking-widest text-zinc-400"
+                    >
+                        Score Atual
+                    </span>
+                    <div
+                        class="flex items-center gap-2"
+                    >
+                        <span
+                            class="text-sm font-black text-emerald-400 font-mono score-text drop-shadow-[0_0_5px_rgba(16,185,129,0.5)]"
+                        >
+                            0000
+                        </span>
+                        <svg
+                            class="w-4 h-4 text-emerald-400"
+                        >
+                            <use
+                                href="#icon-award"
+                            ></use>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+    </div>
+
+    <script
+        src="js/main.js"
+        defer
+    ></script>
+</body>
+</html>
