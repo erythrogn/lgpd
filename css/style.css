@@ -1222,21 +1222,21 @@ transform: scale(1) translateZ(0);
 }
 
 .dialog-box {
-width: 100%;
-max-width: 400px;
-margin: auto;
-background: var(--surface-color);
-border: 1px solid var(--border-color);
-border-radius: 2rem;
-padding: 3rem 2.5rem;
-box-shadow: var(--neo-shadow-out), 0 0 50px rgba(56, 189, 248, 0.05);
-backdrop-filter: blur(28px);
--webkit-backdrop-filter: blur(28px);
-display: flex;
-flex-direction: column;
-gap: 1.75rem;
-transform: translateY(0) translateZ(0);
-position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 6.5rem auto auto auto; /* Força margem superior para isolar o HUD e mantém centralizado horizontalmente */
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 2rem;
+    padding: 3rem 2.5rem;
+    box-shadow: var(--neo-shadow-out), 0 0 50px rgba(56, 189, 248, 0.05);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    transform: translateY(0) translateZ(0);
+    position: relative;
 }
 
 .dialog-box::before {
@@ -1254,6 +1254,7 @@ z-index: 0;
 
 .header-section {
 text-align: center;
+margin-top: 3.5rem; /* Adicionado para descer o título e afastar dos badges superiores */
 margin-bottom: 0.5rem;
 display: flex;
 flex-direction: column;
@@ -1544,31 +1545,31 @@ to { transform: rotate(360deg) translateZ(0); }
 .animate-shake { animation: shakeError 0.5s var(--ease-out) forwards; }
 .animate-spin { animation: spin 1s linear infinite; }
 
-/* ======== MOBILE ======== */
 @media (max-width: 575.98px) {
-.interface-layer {
-padding: 1.5rem 1rem;
-}
-.dialog-box {
-padding: 2rem 1.5rem;
-border-radius: 1.5rem;
-}
-.header-section h1 {
-font-size: 2rem;
-}
-.action-button {
-padding: 1.15rem;
-font-size: 1.05rem;
-}
-.result-display {
-padding: 2rem 1.5rem;
-}
-.result-score {
-font-size: 4.5rem;
-}
-.input-element {
-padding: 1rem 1.25rem;
-}
+    .interface-layer {
+        padding: 1.5rem 1rem;
+    }
+    .dialog-box {
+        margin: 7rem auto auto auto; /* Aumenta a margem de segurança no mobile */
+        padding: 2rem 1.5rem;
+        border-radius: 1.5rem;
+    }
+    .header-section h1 {
+        font-size: 2rem;
+    }
+    .action-button {
+        padding: 1.15rem;
+        font-size: 1.05rem;
+    }
+    .result-display {
+        padding: 2rem 1.5rem;
+    }
+    .result-score {
+        font-size: 4.5rem;
+    }
+    .input-element {
+        padding: 1rem 1.25rem;
+    }
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
